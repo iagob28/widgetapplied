@@ -1,0 +1,13 @@
+* {
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #e5e5e5;
+  font-family: "inter", "sans-serif";
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+}
