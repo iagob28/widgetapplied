@@ -6,7 +6,7 @@ export const Button = styled('button', {
   cursor: 'pointer',
   alignSelf: 'center',
   fontSize: '20px',
-  display: 'flex',
+  gap: '5px',
   alignItems: 'center',
   justifyContent: 'center',
   variants: {
@@ -28,14 +28,23 @@ export const Button = styled('button', {
       },
       white: {
         background: '#fff',
-        '&:hover': { background: '#E83F5B', color: "#fff" },
+        '&:hover': { background: '#E83F5B', color: '#fff' },
         color: '#666666',
-      }
+      },
+    },
+    display: {
+      none: { display: 'none' },
+      show: { display: 'flex' },
+    },
+    borderStyle: {
+      none: { border: 'none' },
+      complete: { borderBottom: '2px solid #4CD62B' },
     },
   },
 
   defaultVariants: {
     size: 'default',
     color: 'blue',
+    borderStyle: 'none',
   },
 })

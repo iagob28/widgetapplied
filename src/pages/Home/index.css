@@ -17,7 +17,7 @@ header {
   margin-bottom: 50px;
 }
 header div {
-  background: #b6b6b6;
+  /* background: #b6b6b6; */
   width: 845px;
   height: 4px;
   border-radius: 8px;
