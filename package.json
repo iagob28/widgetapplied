@@ -47,5 +47,9 @@
   },
   "devDependencies": {
     "@types/node-sass": "^4.11.2"
-  }
+  },
+  "include": [
+    "src/components",
+    "custom.d.ts"
+  ]
 }

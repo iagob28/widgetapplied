@@ -1,0 +1,14 @@
+header {
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 8px;
+  margin-bottom: 50px;
+}
+header div {
+  width: 845px;
+  height: 4px;
+  border-radius: 8px;
+}

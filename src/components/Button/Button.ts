@@ -5,7 +5,6 @@ export const Button = styled('button', {
   border: 'none',
   cursor: 'pointer',
   alignSelf: 'center',
-  fontSize: '20px',
   gap: '5px',
   alignItems: 'center',
   justifyContent: 'center',
@@ -14,10 +13,18 @@ export const Button = styled('button', {
       default: {
         width: '389px',
         height: '80px',
+        fontSize: '20px',
       },
       small: {
         width: '174px',
         height: '50px',
+        fontSize: '14px',
+      },
+      square: {
+        width: '80px',
+        height: '80px',
+        fontSize: '24px',
+        borderRadius: '0 5px 5px 0',
       },
     },
     color: {
@@ -26,10 +33,25 @@ export const Button = styled('button', {
         '&:hover': { filter: 'brightness(0.8)' },
         color: 'White',
       },
+      heavyBlue: {
+        background: '#4953B8',
+        '&:hover': { filter: 'brightness(0.8)' },
+        color: 'White',
+      },
       white: {
         background: '#fff',
         '&:hover': { background: '#E83F5B', color: '#fff' },
         color: '#666666',
+      },
+      red: {
+        background: '#E83F5B',
+        color: '#fff',
+        '&:hover': { filter: 'brightness(0.8)' },
+      },
+      green: {
+        background: '#4CD62B',
+        color: '#fff',
+        '&:hover': { filter: 'brightness(0.8)' },
       },
     },
     display: {

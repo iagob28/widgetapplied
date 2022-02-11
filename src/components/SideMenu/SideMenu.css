@@ -1,0 +1,30 @@
+.side_menu {
+  background: linear-gradient(#ffffff, #e5e5e5);
+  box-shadow: 4px 8px 2px 3px #dbdbdb4b;
+  display: flex;
+  color: #666666;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 24px;
+  gap: 40px;
+  position: absolute;
+  height: 100vh;
+  width: 80px;
+  left: 0;
+  top: 0;
+}
+
+.side_menu span {
+  cursor: pointer;
+}
+
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5965e0;
+  border-left: 5px solid #5965e0;
+  width: 80px;
+  height: 56px;
+}

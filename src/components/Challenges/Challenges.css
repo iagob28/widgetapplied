@@ -1,0 +1,28 @@
+.info_challenge {
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  width: 468px;
+  height: 500px;
+}
+.challenge_divider {
+  width: 340px;
+  height: 1px;
+  background: #dcdde0;
+}
+.info_challenge img {
+  width: 120px;
+}
+
+.info_challenge p {
+  width: 251px;
+}
+
+.info_challenge span {
+  display: flex;
+  gap: 10px;
+}
