@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AuthContextProvider } from "./contexts/authContext";
 import { TimerContextProvider } from "./contexts/timerContext";
 import { Home } from "./pages/Home/index";
 import { Login } from "./pages/Login";
@@ -8,12 +9,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <TimerContextProvider>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/Home" element={<Home />} />
-          </Routes>
-        </TimerContextProvider>
+        <AuthContextProvider>
+          <TimerContextProvider>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/Home" element={<Home />} />
+            </Routes>
+          </TimerContextProvider>
+        </AuthContextProvider>
       </BrowserRouter>
     </>
   );

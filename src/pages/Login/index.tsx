@@ -5,13 +5,14 @@ import { AiFillGithub, AiOutlineArrowRight } from "react-icons/ai";
 import { Text } from "../../components/Text/Text";
 import { Input } from "../../components/Input/index";
 import { Button } from "../../components/Button/Button";
-import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 export function Login() {
-  const history = useNavigate();
+  const { signIn } = useAuth();
 
-  function handleSubmit() {
-    history("/Home");
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    signIn();
   }
 
   return (
