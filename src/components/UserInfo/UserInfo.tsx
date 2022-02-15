@@ -1,3 +1,5 @@
+import { doc, setDoc } from "firebase/firestore";
+import { useEffect } from "react";
 import {
   AiFillCaretRight,
   AiFillCheckCircle,
@@ -58,7 +60,7 @@ export function UserInfo() {
         display={seconds === 0 ? "none" : isActive ? "show" : "none"}
         onClick={() => {
           changeIsActive();
-          changeSeconds(25 * 60);
+          changeSeconds(5);
         }}
       >
         Abandonar ciclo <AiOutlineClose />
@@ -70,7 +72,7 @@ export function UserInfo() {
         display={seconds === 0 ? "show" : "none"}
         onClick={() => {
           changeIsActive();
-          changeSeconds(25 * 60);
+          changeSeconds(5);
         }}
       >
         Ciclo concluído <AiFillCheckCircle color="#4CD62B" />

@@ -1,15 +1,49 @@
 import { Button } from "../Button/Button";
 import { Text } from "../Text/Text";
 import { Title } from "../Title/Title";
-import "./Challenges.css"
+import { useTimer } from "../../hooks/useTimer";
+import "./Challenges.css";
+import { useAuth } from "../../hooks/useAuth";
+import { doc, setDoc } from "firebase/firestore";
+import { database } from "../../services/firebase";
+import { useEffect } from "react";
 
 export function Challenges() {
+  const points = 400;
+  const { changeSeconds } = useTimer();
+  const { changeXp, user } = useAuth();
+  const data = doc(database, user.id, "userData");
+
+  function handleFail() {
+    changeSeconds(5);
+  }
+
+  async function handleComplete() {
+    changeXp(points);
+    changeSeconds(5);
+  }
+
+  useEffect(() => {
+    if (user.id != "") {
+      const setData = async () => {
+        await setDoc(doc(database, user.id, "userData"), {
+          xp: user.xp,
+          completeChallenges: user.completeChallenges,
+          level: user.level,
+        });
+      };
+      return () => {
+        setData();
+      };
+    }
+  }, [user]);
+  
   return (
     <>
       <section className="info_challenge">
         <div>
           <Title color="blue" size="small">
-            Ganhe 400 xp
+            Ganhe {points} xp
           </Title>
           <div className="challenge_divider"></div>
         </div>
@@ -27,10 +61,10 @@ export function Challenges() {
         </div>
 
         <span>
-          <Button size="small" color="green">
+          <Button onClick={handleComplete} size="small" color="green">
             Completei
           </Button>
-          <Button size="small" color="red">
+          <Button onClick={handleFail} size="small" color="red">
             Falhei
           </Button>
         </span>
