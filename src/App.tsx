@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/authContext";
+import { ChallengeContextProvider } from "./contexts/challengeContext";
 import { TimerContextProvider } from "./contexts/timerContext";
 import { Home } from "./pages/Home/index";
 import { Login } from "./pages/Login";
@@ -11,10 +12,12 @@ function App() {
       <BrowserRouter>
         <AuthContextProvider>
           <TimerContextProvider>
-            <Routes>
-              <Route path="/" element={<Login />} />
-              <Route path="/Home" element={<Home />} />
-            </Routes>
+            <ChallengeContextProvider>
+              <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/Home" element={<Home />} />
+              </Routes>
+            </ChallengeContextProvider>
           </TimerContextProvider>
         </AuthContextProvider>
       </BrowserRouter>

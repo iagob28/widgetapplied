@@ -7,20 +7,22 @@ import { useAuth } from "../../hooks/useAuth";
 import { doc, setDoc } from "firebase/firestore";
 import { database } from "../../services/firebase";
 import { useEffect } from "react";
+import { useChallenge } from "../../hooks/useChallenge";
 
 export function Challenges() {
-  const points = 400;
   const { changeSeconds } = useTimer();
   const { changeXp, user } = useAuth();
-  const data = doc(database, user.id, "userData");
+  const { challenge } = useChallenge();
 
   function handleFail() {
     changeSeconds(5);
   }
 
   async function handleComplete() {
-    changeXp(points);
-    changeSeconds(5);
+    if (challenge?.points != undefined) {
+      changeXp(parseInt(challenge.points));
+      changeSeconds(5);
+    } else return;
   }
 
   useEffect(() => {
@@ -36,27 +38,23 @@ export function Challenges() {
         setData();
       };
     }
-  }, [user]);
-  
+  }, [user, changeSeconds]);
+
   return (
     <>
       <section className="info_challenge">
         <div>
           <Title color="blue" size="small">
-            Ganhe {points} xp
+            Ganhe {challenge?.points} xp
           </Title>
           <div className="challenge_divider"></div>
         </div>
 
-        <img
-          src="https://cdn-icons.flaticon.com/png/512/1823/premium/1823079.png?token=exp=1644518907~hmac=6165e7c91eb066dac73396a5e9755336"
-          alt=""
-        />
+        <img src={challenge?.img} alt="" />
         <div>
-          <Title weight="heavy">Exercite-se</Title>
+          <Title weight="heavy">{challenge?.phrase}</Title>
           <Text weight="light" size="small">
-            É agora UserName, bora lá. Caminhe por 3 minutos e estique suas
-            pernas para você ficar saudável.
+            {challenge?.des}
           </Text>
         </div>
 
