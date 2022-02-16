@@ -19,14 +19,14 @@ export function Challenges() {
   }
 
   async function handleComplete() {
-    if (challenge?.points != undefined) {
+    if (challenge?.points !== undefined) {
       changeXp(parseInt(challenge.points));
       changeSeconds(25 * 60);
     } else return;
   }
 
   useEffect(() => {
-    if (user.id != "") {
+    if (user.id !== "") {
       const setData = async () => {
         await setDoc(doc(database, user.id, "userData"), {
           xp: user.xp,

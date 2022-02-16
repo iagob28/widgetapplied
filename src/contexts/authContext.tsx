@@ -1,5 +1,5 @@
 import { signInWithPopup } from "firebase/auth";
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, database, provider } from "../services/firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
@@ -62,7 +62,6 @@ export function AuthContextProvider(props: propsType) {
       level: String(parseInt(user.level) + 1),
     });
   }
-  
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
@@ -106,7 +105,7 @@ export function AuthContextProvider(props: propsType) {
         history("/");
       }
     });
-  }, []);
+  }, [history]);
 
   function signIn() {
     signInWithPopup(auth, provider)

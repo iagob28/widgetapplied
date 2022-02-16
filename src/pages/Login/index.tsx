@@ -1,9 +1,7 @@
 import "./index.css";
 import Logo from "../../assets/img/Logo.svg";
 import { Title } from "../../components/Title/Title";
-import { AiFillGithub, AiOutlineArrowRight } from "react-icons/ai";
-import { Text } from "../../components/Text/Text";
-import { Input } from "../../components/Input/index";
+import { AiFillGithub } from "react-icons/ai";
 import { Button } from "../../components/Button/Button";
 import { useAuth } from "../../hooks/useAuth";
 
