@@ -16,7 +16,7 @@ type propsType = {
 
 export const TimerContext = createContext({} as TimerContextType);
 let timeout: NodeJS.Timeout;
-const COUNTDOWN_AMOUNT_TOTAL = 5; // 25 minutes for timer
+const COUNTDOWN_AMOUNT_TOTAL = 25 * 60; // 25 minutes for timer
 
 export function TimerContextProvider(props: propsType) {
   const [seconds, setSeconds] = useState<number>(COUNTDOWN_AMOUNT_TOTAL);

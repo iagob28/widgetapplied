@@ -60,7 +60,7 @@ export function UserInfo() {
         display={seconds === 0 ? "none" : isActive ? "show" : "none"}
         onClick={() => {
           changeIsActive();
-          changeSeconds(5);
+          changeSeconds(25 * 60);
         }}
       >
         Abandonar ciclo <AiOutlineClose />
@@ -70,10 +70,6 @@ export function UserInfo() {
         color="white"
         borderStyle="complete"
         display={seconds === 0 ? "show" : "none"}
-        onClick={() => {
-          changeIsActive();
-          changeSeconds(5);
-        }}
       >
         Ciclo concluído <AiFillCheckCircle color="#4CD62B" />
       </Button>

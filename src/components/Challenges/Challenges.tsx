@@ -15,13 +15,13 @@ export function Challenges() {
   const { challenge } = useChallenge();
 
   function handleFail() {
-    changeSeconds(5);
+    changeSeconds(25 * 60);
   }
 
   async function handleComplete() {
     if (challenge?.points != undefined) {
       changeXp(parseInt(challenge.points));
-      changeSeconds(5);
+      changeSeconds(25 * 60);
     } else return;
   }
 

@@ -3,7 +3,6 @@ import { createContext, useEffect, useState } from "react";
 import { useTimer } from "../hooks/useTimer";
 import { database } from "../services/firebase";
 
-
 type Challenge = {
   points: string;
   des: string;
@@ -24,9 +23,14 @@ function getRandomInt(min: number, max: number) {
 export const ChallengeContext = createContext({} as ChallengeContextType);
 
 export function ChallengeContextProvider(props: propsType) {
-  const [challenge, setChallenge] = useState<Challenge>();
+  const [challenge, setChallenge] = useState<Challenge>({
+    points: "400",
+    des: "É agora, bora lá. Caminhe por 3 minutos e estique suas pernas para você ficar saudável.",
+    phrase: "Exercite-se",
+    img: "https://cdn-icons-png.flaticon.com/512/684/684065.png",
+  });
   const { seconds } = useTimer();
-  const id = getRandomInt(1, 3);
+  const id = getRandomInt(1, 4);
 
   useEffect(() => {
     async function getChallenge(id: number) {

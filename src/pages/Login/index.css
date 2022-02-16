@@ -17,15 +17,17 @@ img {
   justify-content: space-evenly;
   text-align: start;
 }
-.input_button {
+.button{
   display: flex;
+  align-items: center;
 }
+
 .github {
   display: flex;
-  gap: 10px;
   align-items: center;
-  flex-wrap: wrap;
-  text-align: start;
+  justify-content: space-around;
+  text-align: center;
+  padding: 15px;
 }
 
 .left_side {

@@ -24,16 +24,12 @@ export function Login() {
           <Title weight="heavy" color="white" size="large" align="left">
             Bem vindo
           </Title>
-          <Text color="white" className="github">
-            <AiFillGithub size="40px" />
-            Faça login com o seu github para começar
-          </Text>
-          <form className="input_button" onSubmit={handleSubmit}>
-            <Input placeholder="Digite seu username" />
-            <Button size="square" color="heavyBlue">
-              <AiOutlineArrowRight />
+          <div className="button">
+            <Button onClick={handleSubmit} color="heavyBlue" className="github">
+              <AiFillGithub size="40px" />
+              Faça login com o seu github para começar
             </Button>
-          </form>
+          </div>
         </section>
       </div>
     </>
