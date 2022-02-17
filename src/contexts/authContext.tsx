@@ -94,6 +94,8 @@ export function AuthContextProvider(props: propsType) {
             xp: "0",
             completeChallenges: "00",
             level: "1",
+            userName: user.displayName,
+            userAvatar: user.photoURL,
           });
         }
 

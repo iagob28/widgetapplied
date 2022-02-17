@@ -32,6 +32,8 @@ export function Challenges() {
           xp: user.xp,
           completeChallenges: user.completeChallenges,
           level: user.level,
+          userName: user.displayName,
+          userAvatar: user.photoURL,
         });
       };
       return () => {

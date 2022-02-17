@@ -5,4 +5,9 @@ main {
   align-items: center;
 }
 
-
+.box_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}

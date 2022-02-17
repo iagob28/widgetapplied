@@ -8,11 +8,14 @@ export function Home() {
   const { card } = useTimer();
   return (
     <>
-      <XperienceBar />
-      <main>
-        <UserInfo />
-        {card}
-      </main>
+      <div className="box_center">
+        <XperienceBar />
+        <main>
+          <UserInfo />
+          {card}
+        </main>
+      </div>
+
       <SideMenu />
     </>
   );
