@@ -1,9 +1,4 @@
-import {
-  collection,
-  getDocs,
-  query,
-  where,
-} from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { database } from "../services/firebase";
 
@@ -13,7 +8,7 @@ type Users = {
   level?: string;
   userAvatar?: string;
   userName?: string;
-  xp?: string;
+  xp: string;
 };
 export function useUsers() {
   const [users, setUsers] = useState<Users[] | void>();
@@ -36,6 +31,7 @@ export function useUsers() {
           };
         }
       );
+
       setUsers(parsedUsers);
     }
     getUsers();

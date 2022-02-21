@@ -5,6 +5,14 @@ import "./index.css";
 
 export function LeaderboardList() {
   const { users } = useUsers();
+  
+  if (users !== undefined) {
+    users.sort(function compare(xpa, xpb) {
+      if (parseInt(xpa.xp) > parseInt(xpb.xp)) return -1;
+      if (parseInt(xpa.xp) < parseInt(xpb.xp)) return 1;
+      return 0;
+    });
+  }
 
   return (
     <>
