@@ -29,10 +29,8 @@ export function Challenges() {
     if (user.id !== "") {
       const setData = async () => {
         await setDoc(doc(database, "users", user.id), {
-          id: user.id,
-          photoURL: user.photoURL ? user.photoURL : "",
-          displayName: user.displayName ? user.displayName : "",
-          email: user.email ? user.email : "",
+          userAvatar: user.photoURL,
+          userName: user.displayName,
           xp: user.xp,
           completeChallenges: user.completeChallenges,
           level: user.level,
