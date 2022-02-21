@@ -6,6 +6,7 @@ import { useTimer } from "../../hooks/useTimer";
 
 export function Home() {
   const { card } = useTimer();
+
   return (
     <>
       <div className="box_center">
@@ -15,7 +16,6 @@ export function Home() {
           {card}
         </main>
       </div>
-
       <SideMenu />
     </>
   );

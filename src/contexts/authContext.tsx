@@ -66,7 +66,7 @@ export function AuthContextProvider(props: propsType) {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
-        const docRef = doc(database, user.uid, "userData");
+        const docRef = doc(database, "users", user.uid);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
@@ -90,7 +90,7 @@ export function AuthContextProvider(props: propsType) {
             completeChallenges: "00",
             level: "1",
           });
-          await setDoc(doc(database, user.uid, "userData"), {
+          await setDoc(doc(database, "users", user.uid), {
             xp: "0",
             completeChallenges: "00",
             level: "1",
@@ -99,7 +99,7 @@ export function AuthContextProvider(props: propsType) {
           });
         }
 
-        history("/Home");
+        // history("/Home");
         return () => {
           unsubscribe();
         };
