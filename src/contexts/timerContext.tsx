@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { Challenges } from "../components/Challenges/Challenges";
 import { NoChallengeInfo } from "../components/NoChallenges/NoChallengeInfo";
+import differenceInSeconds from "date-fns/differenceInSeconds";
 
 type TimerContextType = {
   seconds: number;
@@ -33,9 +34,13 @@ export function TimerContextProvider(props: propsType) {
 
   useEffect(() => {
     setCard(<NoChallengeInfo />);
+    const startTime = new Date();
     if (isActive && seconds > 0) {
       timeout = setTimeout(() => {
-        setSeconds((state) => state - 1);
+        const actualTime = new Date();
+        setSeconds(
+          (state) => state - differenceInSeconds(actualTime, startTime)
+        );
       }, 1000);
     } else {
       clearTimeout(timeout);
