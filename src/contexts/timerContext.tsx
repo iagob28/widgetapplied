@@ -37,9 +37,8 @@ export function TimerContextProvider(props: propsType) {
     setCard(<NoChallengeInfo />);
     if (isActive && seconds > 0) {
       timeout = setTimeout(() => {
-        const actualTime = new Date();
         setSeconds(
-          COUNTDOWN_AMOUNT_TOTAL - differenceInSeconds(actualTime, startTime)
+          COUNTDOWN_AMOUNT_TOTAL - differenceInSeconds(new Date(), startTime)
         );
       }, 1000);
     } else {
