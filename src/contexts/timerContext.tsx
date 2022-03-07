@@ -18,7 +18,7 @@ type propsType = {
 export const TimerContext = createContext({} as TimerContextType);
 let timeout: NodeJS.Timeout;
 const COUNTDOWN_AMOUNT_TOTAL = 25 * 60; // 25 minutes for timer
-
+let startTime: Date;
 export function TimerContextProvider(props: propsType) {
   const [seconds, setSeconds] = useState<number>(COUNTDOWN_AMOUNT_TOTAL);
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -26,6 +26,7 @@ export function TimerContextProvider(props: propsType) {
 
   function changeIsActive() {
     setIsActive(!isActive);
+    startTime = new Date();
   }
 
   function changeSeconds(sec: number) {
@@ -34,12 +35,11 @@ export function TimerContextProvider(props: propsType) {
 
   useEffect(() => {
     setCard(<NoChallengeInfo />);
-    const startTime = new Date();
     if (isActive && seconds > 0) {
       timeout = setTimeout(() => {
         const actualTime = new Date();
         setSeconds(
-          (state) => state - differenceInSeconds(actualTime, startTime)
+          COUNTDOWN_AMOUNT_TOTAL - differenceInSeconds(actualTime, startTime)
         );
       }, 1000);
     } else {
