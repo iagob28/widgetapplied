@@ -1,4 +1,4 @@
-# Move It
+# Widget + Moveit
 This project is an integration off the widget that takes screenshot and details
 of your problems and send to a moderator for email with the moveit project, wich
 you can see here in my repositories.
