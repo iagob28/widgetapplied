@@ -41,9 +41,9 @@ export function UserInfo() {
       </div>
 
       <div className="timer">
-        <h2>{String(displayMinutes).padStart(2, "0")}</h2>
-        <p>:</p>
-        <h2>{String(displaySeconds).padStart(2, "0")}</h2>
+        <h2 className="flex items-center">{String(displayMinutes).padStart(2, "0")}</h2>
+        <p className="flex items-center">:</p>
+        <h2 className="flex items-center">{String(displaySeconds).padStart(2, "0")}</h2>
       </div>
       {/* Start button */}
       <Button
