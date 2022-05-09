@@ -16,7 +16,7 @@ clickable link to see the image in full in another tab.
 https://widgetapplied.vercel.app
 
 ## Preview
-blob:https://vercel.com/e1fcbd81-52d9-45d1-9008-904c933016fb
+![image](https://user-images.githubusercontent.com/61669995/167474573-2d47a3b1-a64e-4a1c-918c-4eb0150f0b3c.png)
 
 
 #### Thank you for seeing!
