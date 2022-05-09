@@ -13,10 +13,10 @@ clickable link to see the image in full in another tab.
 
 
 ## Try out
-tbd
+https://widgetapplied.vercel.app
 
 ## Preview
-tbd
+blob:https://vercel.com/e1fcbd81-52d9-45d1-9008-904c933016fb
 
 
 #### Thank you for seeing!
